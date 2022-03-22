@@ -4,5 +4,8 @@
 # Xcode
 Marvelous.swiftpm/.swiftpm
 Marvelous.swiftpm/.derivedData
-Marvelous.xcworkspace/xcuserdata/*
+**/xcuserdata/
 .build/
+
+# Secrets
+*/Resources/KeyPair.json
