@@ -4,4 +4,5 @@
 # Xcode
 Marvelous.swiftpm/.swiftpm
 Marvelous.swiftpm/.derivedData
+Marvelous.xcworkspace/xcuserdata/*
 .build/
