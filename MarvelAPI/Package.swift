@@ -18,7 +18,7 @@ let package = Package(
       name: "MarvelAPITests",
       dependencies: ["MarvelAPI"],
       resources: [
-        .process("TestKeyPair.json")
+        .process("Resources/TestKeyPair.json")
       ]),
   ]
 )
