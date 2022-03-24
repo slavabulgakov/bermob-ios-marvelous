@@ -1,4 +1,3 @@
-import CryptoKit
 import Foundation
 import MarvelAPI
 import PlaygroundSupport
@@ -12,39 +11,22 @@ guard let keyPairURLString = Bundle.main.path(forResource: "KeyPair", ofType: "j
 
 let keyPairURL = URL(fileURLWithPath: keyPairURLString)
 let keyPair = keyPairFactory.makeKeyPair(fromFileURL: keyPairURL)
-print(keyPair.publicKey)
-
-let timestamp = String(Date().timeIntervalSince1970)
-
-func generateHash(timestamp: String, keyPair: KeyPair) -> String {
-  
-  let string = timestamp + keyPair.privateKey + keyPair.publicKey
-  
-  guard let data = string.data(using: .utf8) else {
-    /// TODO: Handle this error correctly...
-    fatalError("Could not create data from string")
-  }
-  
-  let digest = Insecure.MD5.hash(data: data)
-  let digestString = digest.map { String(format: "%02hhx", $0) }.joined()
-  
-  return digestString
-}
+let authenticationParameters = AuthenticationParameters(keyPair: keyPair)
 
 let baseURLString = "gateway.marvel.com"
 
-func generateCharactersURL(baseURLString: String, timestamp: String, keyPair: KeyPair) -> URL {
-  
+func generateCharactersURL(baseURLString: String, authenticationParameters: AuthenticationParameters) -> URL {
+
   var components = URLComponents()
   components.scheme = "http"
   components.host = baseURLString
   components.path = "/v1/public/characters"
   components.queryItems = [
-    URLQueryItem(name: "ts", value: timestamp),
-    URLQueryItem(name: "apikey", value: keyPair.publicKey),
-    URLQueryItem(name: "hash", value: generateHash(timestamp: timestamp, keyPair: keyPair))
+    URLQueryItem(name: "ts", value: authenticationParameters.timeStamp),
+    URLQueryItem(name: "apikey", value: authenticationParameters.publicKey),
+    URLQueryItem(name: "hash", value: authenticationParameters.hash)
   ]
-  
+
   // TODO: Don't force unwrap this...
   return components.url!
 }
@@ -73,17 +55,16 @@ struct MarvelCharacter: Decodable, CustomStringConvertible {
 
 let session = URLSession.shared
 let url = generateCharactersURL(baseURLString: baseURLString,
-                                timestamp: timestamp,
-                                keyPair: keyPair)
+                                authenticationParameters: authenticationParameters)
 let urlRequest = URLRequest(url: url)
 
 session.dataTask(with: urlRequest) { (data, response, error) in
-  
+
   guard let data = data else {
     print("No data :/")
     return
   }
-  
+
   let decoder = JSONDecoder()
   // TODO: Don't force unwrap this...
   let decodedResponse = try! decoder.decode(MarvelResponse.self, from: data)
