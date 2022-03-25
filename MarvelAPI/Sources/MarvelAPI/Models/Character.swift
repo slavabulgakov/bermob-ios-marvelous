@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by James Banford on 24.03.22.
-//
-
 import Foundation
 
 public struct Character: Decodable {
