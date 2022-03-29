@@ -1,7 +1,7 @@
 import Foundation
 
 // Model an endpoint of the API
-public struct Endpoint {
+struct Endpoint {
   
   /// The path to the endpoint.
   let path: String
@@ -12,13 +12,13 @@ public struct Endpoint {
 
 // MARK: - Factory methods for endpoints
 
-public extension Endpoint {
+extension Endpoint {
   
-  /// Return only characters matching the specified full character name (e.g. 3-D Man).
+  /// Model an endpoint which returns characters matching the specified full character name (e.g. 3-D Man).
   ///
   /// - ToDo: Add additional parameters such as `nameStartsWith`, `orderBy`, and `limit`.
-  static func searchCharacters(named name: String,
-                               withAuthenticationParameters authenticationParameters: AuthenticationParameters) -> Endpoint {
+  static func getCharacters(named name: String,
+                            withAuthenticationParameters authenticationParameters: AuthenticationParameters) -> Endpoint {
     return Endpoint(
       path: "/v1/public/characters",
       queryItems: [
@@ -33,7 +33,7 @@ public extension Endpoint {
 
 // MARK: - Endpoint URLs
 
-public extension Endpoint {
+extension Endpoint {
   
   /// The URL of the endpoint.
   ///

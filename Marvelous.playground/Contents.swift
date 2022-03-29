@@ -1,33 +1,31 @@
+import Combine
 import Foundation
 import MarvelAPI
 import PlaygroundSupport
 
-let keyPairFactory = KeyPairFactory()
+// Create credentials from JSON.
 
 guard let keyPairURLString = Bundle.main.path(forResource: "KeyPair", ofType: "json") else {
   fatalError("Test key pair does not exist")
 }
 
+// Use credentials to create authentication parameters.
+
 let keyPairURL = URL(fileURLWithPath: keyPairURLString)
+
+let keyPairFactory = KeyPairFactory()
 let keyPair = keyPairFactory.makeKeyPair(fromFileURL: keyPairURL)
+
 let authenticationParameters = AuthenticationParameters(keyPair: keyPair)
 
-guard let url = Endpoint.searchCharacters(named: "3-D Man",
-                                          withAuthenticationParameters: authenticationParameters).url else {
-  fatalError("Invalid URL")
-}
-let urlRequest = URLRequest(url: url)
+// Create a new instance of the API with the authentication parameters.
 
-let session = URLSession.shared
-session.dataTask(with: urlRequest) { (data, response, error) in
+let marvelAPI = MarvelAPI(authenticationParameters: authenticationParameters)
 
-  guard let data = data else {
-    print("No data")
-    return
-  }
+// Make a request to get characters named "3D-Man" and print the results.
 
-  let decoder = JSONDecoder()
-  // TODO: Don't force unwrap these...
-  let decodedResponse = try! decoder.decode(CharacterDataWrapper.self, from: data)
-  print(decodedResponse.data!)
-}.resume()
+var cancellable = Set<AnyCancellable>()
+marvelAPI.getCharacters(named: "3D-Man")
+            .sink(receiveCompletion: {_ in print("completion")},
+                  receiveValue: { print($0) })
+            .store(in: &cancellable)
