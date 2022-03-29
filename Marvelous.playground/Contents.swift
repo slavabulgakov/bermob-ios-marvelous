@@ -26,6 +26,6 @@ let marvelAPI = MarvelAPI(authenticationParameters: authenticationParameters)
 
 var cancellable = Set<AnyCancellable>()
 marvelAPI.getCharacters(named: "3D-Man")
-            .sink(receiveCompletion: {_ in print("completion")},
+            .sink(receiveCompletion: {_ in print("Request complete")},
                   receiveValue: { print($0) })
             .store(in: &cancellable)

@@ -5,6 +5,9 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
+      location = "group:MarvelousApp/MarvelousApp.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Marvelous.playground">
    </FileRef>
    <FileRef

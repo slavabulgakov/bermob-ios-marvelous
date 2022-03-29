@@ -8,4 +8,4 @@ Marvelous.swiftpm/.derivedData
 .build/
 
 # Secrets
-*/Resources/KeyPair.json
+**/Resources/KeyPair.json
