@@ -4,7 +4,7 @@
 
 Marvelous is a simple iOS app to explore the [Marvel API](https://developer.marvel.com/docs). 
 
-At [diconium](https://diconium.com/en) we are [hiring](https://jobs.diconium.com/offer/senior-ios-developer-f-m-x/540198) iOS developers. This repository contains the code base that we use to do pair work with candidates during the "technical" part of our recruitment process. We find it useful because it allows us to simulate how we work together with candidates in a way that is more lightweight and playful than the large, commercial software projects that are our normal day to day work. This way we can show how we work, find out how prospective employees like to work, and do it all while collaborating on some (more or less) working software.
+At [diconium](https://diconium.com/en) we are [hiring](https://jobs.diconium.com/en/offer/senior-ios-developer-all-genders/540268) iOS developers. This repository contains the code base that we use to do pair work with candidates during the "technical" part of our recruitment process. We find it useful because it allows us to simulate how we work together with candidates in a way that is more lightweight and playful than the large, commercial software projects that are our normal day to day work. This way we can show how we work, find out how prospective employees like to work, and do it all while collaborating on some (more or less) working software.
 
 ## Getting Started
 
