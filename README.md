@@ -18,7 +18,7 @@ In order to actually get data from the Marvel API you will need an [API key](htt
 
 When you have one save the public and private keys in a file named `KeyPair.json` in a `/Resources` directory somewhere. This will ensure that the private key is not committed to version control. For example, to use the Marvelous playground to explore the API save your key pair json in `Resources` directory of the Playground.
 
-The key pair json in the file should have the following format:
+The key pair json should have the following format:
 
     {
       "publicKey": "somePublicKey",
@@ -29,6 +29,6 @@ The key pair json in the file should have the following format:
 
 If you are experiencing problems please [open an issue](https://github.com/diconium/bermob-ios-marvelous/issues) and we will try to address it as soon as we can. Please assign @eugenpirogoff on GitHub to it.
 
-## Prepare for the interview
+## Preparing for the interview
 
-We assume that you have opened the workspace and gained an overview in the codebase, it does not mean that you know every detail of it, but you know at least what it roughly does. We also assume that you took a look into the [wiki](https://github.com/diconium/bermob-ios-marvelous/projects/1/) and have chosen a issue for us to work on during the interview session. [This here](https://github.com/diconium/bermob-ios-marvelous/issues/10) could be a good starting point.
+Please clone the repository, open the workspace, and familiarise yourself with the codebase. You don't need to understand every detail, but you should at least know what it does. You should also take a look at the [wiki](https://github.com/diconium/bermob-ios-marvelous/projects/1/) and have chosen an issue for us to work on during the pairing session. [This issue](https://github.com/diconium/bermob-ios-marvelous/issues/10) could be a good starting point for example.
