@@ -9,3 +9,6 @@ Marvelous.swiftpm/.derivedData
 
 # Secrets
 **/Resources/KeyPair.json
+
+# Temporary Xcode files
+.derivedData
