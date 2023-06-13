@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Character: Decodable {
+public struct Character: Decodable, CustomStringConvertible {
   
   /// The unique ID of the character resource.
   public let id: Int?
@@ -9,7 +9,30 @@ public struct Character: Decodable {
   public let name: String?
   
   ///  A short bio or description of the character.
-  public let description: String?
+  public let desc: String?
+    
+  enum CodingKeys: String, CodingKey {
+      case id
+      case name
+      case desc = "description"
+  }
+    
+    public var description: String {
+        let id = self.id ?? 0
+        let name = self.name ?? ""
+        let desc = self.desc ?? ""
+        return "ID: \(id)\n Name: \(name)\n Description: \(desc)"
+    }
+
+    public static func example() -> Character {
+        return Character(id: 12341, name: "3D Man", desc: "Best hero ever")
+    }
+    
+//  override var customDescription() {
+//    print("ID: \(self.id)\n Name: \(self.name)\n Description: \(self.description)")
+//  }
+    
+    
   
   /// The date the resource was most recently modified.
   // let modified: Date?
@@ -42,4 +65,6 @@ public struct Character: Decodable {
   /// A resource list of series in which this character appears.
   // let series: SeriesList?
   // TODO: Add an SeriesList type
+    
+
 }

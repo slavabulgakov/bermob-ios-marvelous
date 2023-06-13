@@ -16,9 +16,7 @@ struct MarvelousApp: App {
 private extension MarvelousApp {
   
   func makeSearchView() -> SearchView {
-
-    let controller = SearchController()
-    let view = SearchView(searchController: controller)
+    let view = SearchView()
 
     return view
   }
