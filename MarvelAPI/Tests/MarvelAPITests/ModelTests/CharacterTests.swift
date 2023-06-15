@@ -22,8 +22,7 @@ class CharacterTests: XCTestCase {
     let id = character.id!
 
     XCTAssertNotNil(id, "A marvel data should have an id attribute when it is present.")
-    XCTAssertEqual(id, 42,
-                   "A character data wrapper should have the correct id attribute when it is present.")
+    XCTAssertEqual(id, 42, "A character data wrapper should have the correct id attribute when it is present.")
   }
   
   func testMarvelDataHasTheCorrectName() {
@@ -31,17 +30,15 @@ class CharacterTests: XCTestCase {
     let name = character.name!
 
     XCTAssertNotNil(name, "A marvel data should have a name attribute when it is present.")
-    XCTAssertEqual(name, "42 Man",
-                   "A character data wrapper should have the correct name attribute when it is present.")
+    XCTAssertEqual(name, "42 Man", "A character data wrapper should have the correct name attribute when it is present.")
   }
   
   func testMarvelDataHasTheCorrectDescription() {
 
-    let description = character.description!
+    let description = character.description
 
     XCTAssertNotNil(description, "A marvel data should have an id attribute when it is present.")
-    XCTAssertEqual(description, "42 Man 42",
-                   "A character data wrapper should have the correct id attribute when it is present.")
+    XCTAssertEqual(description, "ID: 42 Name: 42 Man Description: 42 Man 42")
   }
 }
 

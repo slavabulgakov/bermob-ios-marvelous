@@ -4,13 +4,13 @@
 
 Marvelous is a simple iOS app to explore the [Marvel API](https://developer.marvel.com/docs).
 
-At [diconium](https://diconium.com/en) we are [hiring](https://jobs.diconium.com/en/offer/senior-ios-developer-all-genders/540268) iOS developers. This repository contains the code base that we use to do pair work with candidates during the "technical" part of our recruitment process. We find it useful because it allows us to simulate how we work together with candidates in a way that is more lightweight and playful than the large, commercial software projects that are our normal day to day work. This way we can show how we work, find out how prospective employees like to work, and do it all while collaborating on some (more or less) working software.
+At [diconium](https://diconium.com/en) we are [hiring](https://jobs.diconium.com/en/offer/mobile-developer-all-genders/33a7ccfc-bb06-5f9b-b711-048fddde78fa) iOS developers. This repository contains the code base that we use to do pair work with candidates during the "technical" part of our recruitment process. We find it useful because it allows us to simulate how we work together with candidates in a way that is more lightweight and playful than the large, commercial software projects that are our normal day to day work. This way we can show how we work, find out how prospective employees like to work, and do it all while collaborating on some (more or less) working software.
 
 ## Getting Started
 
 ### Prerequisites
 
-At minimum Xcode 13.3 is required for the workspace to work correctly. The command line tools should also be installed. These should be the only prerequisites required for the code to compile and run.
+At minimum Xcode 14.3 is required for the workspace to work correctly. The command line tools should also be installed. These should be the only prerequisites required for the code to compile and run.
 
 ### Access to the Marvel API
 
@@ -31,4 +31,4 @@ If you are experiencing problems please [open an issue](https://github.com/dicon
 
 ## Preparing for the interview
 
-Please clone the repository, open the workspace, and familiarise yourself with the codebase. You don't need to understand every detail, but you should at least know what it does. You should also take a look at the [wiki](https://github.com/diconium/bermob-ios-marvelous/projects/1/) and have chosen an issue for us to work on during the pairing session. [This issue](https://github.com/diconium/bermob-ios-marvelous/issues/10) could be a good starting point for example.
+Please clone the repository, open the workspace, and familiarise yourself with the codebase. You don't need to understand every detail, but you should at least know what it does. You should also take a look at the [wiki](https://github.com/diconium/bermob-ios-marvelous/projects/1/) and have chosen an issue for us to work on during the pairing session. [This issue](https://github.com/diconium/bermob-ios-marvelous/issues/11 && https://github.com/diconium/bermob-ios-marvelous/issues/4) could be a good starting point for example.

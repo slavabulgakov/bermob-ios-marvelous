@@ -17,23 +17,18 @@ public struct Character: Decodable, CustomStringConvertible {
       case desc = "description"
   }
     
-    public var description: String {
-        let id = self.id ?? 0
-        let name = self.name ?? ""
-        let desc = self.desc ?? ""
-        return "ID: \(id)\n Name: \(name)\n Description: \(desc)"
-    }
+  public var description: String {
+    let id = self.id ?? 0
+    let name = self.name ?? ""
+    let desc = self.desc ?? ""
+      
+    return "ID: \(id) Name: \(name) Description: \(desc)"
+  }
 
-    public static func example() -> Character {
-        return Character(id: 12341, name: "3D Man", desc: "Best hero ever")
-    }
+  public static func example() -> Character {
+    return Character(id: 12341, name: "3D Man", desc: "Best hero ever")
+  }
     
-//  override var customDescription() {
-//    print("ID: \(self.id)\n Name: \(self.name)\n Description: \(self.description)")
-//  }
-    
-    
-  
   /// The date the resource was most recently modified.
   // let modified: Date?
   // TODO: Decode Dates
@@ -65,6 +60,4 @@ public struct Character: Decodable, CustomStringConvertible {
   /// A resource list of series in which this character appears.
   // let series: SeriesList?
   // TODO: Add an SeriesList type
-    
-
 }

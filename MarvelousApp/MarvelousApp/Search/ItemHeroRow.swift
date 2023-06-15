@@ -21,7 +21,7 @@ struct ItemHeroRow: View {
                 .lineLimit(2)
                 .padding()
             
-//            Spacer()
+           Spacer()
 
             Text(hero.desc ?? "")
                 .font(.caption2)

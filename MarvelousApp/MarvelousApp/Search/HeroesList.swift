@@ -13,9 +13,7 @@ struct HeroesList: View {
     var body: some View {
         List {
             ForEach(0..<viewModel.characters.count, id: \.self) { index in
-//                NavigationLink(destination: Ch) {
-                    ItemHeroRow(hero: viewModel.characters[index])
-//                }
+                ItemHeroRow(hero: viewModel.characters[index])
             }
         }
     }
