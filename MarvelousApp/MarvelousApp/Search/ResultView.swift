@@ -22,7 +22,7 @@ struct ResultView: View {
             if viewModel.characters.isEmpty {
                 ProgressView("Loading...")
             }            
-            HeroesList(viewModel: viewModel)
+            CharactersList(viewModel: viewModel)
         }
         .onAppear() {
             viewModel.getCharacters(term: term)

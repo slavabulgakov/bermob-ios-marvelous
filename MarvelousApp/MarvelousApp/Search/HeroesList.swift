@@ -1,5 +1,5 @@
 //
-//  HeroesList.swift
+//  CharactersList.swift
 //  MarvelousApp
 //
 //  Created by Sergio Ruiz Pérez on 01.09.22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HeroesList: View {
+struct CharactersList: View {
     @ObservedObject var viewModel: ResultsViewModel
     
     var body: some View {
@@ -19,9 +19,9 @@ struct HeroesList: View {
     }
 }
 
-struct HeroesList_Previews: PreviewProvider {
+struct CharactersList_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = ResultsViewModel()
-        HeroesList(viewModel: viewModel)
+        CharactersList(viewModel: viewModel)
     }
 }
