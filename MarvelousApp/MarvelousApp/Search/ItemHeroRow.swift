@@ -33,6 +33,6 @@ struct ItemHeroRow: View {
 
 struct ItemHeroRow_Previews: PreviewProvider {
     static var previews: some View {
-        ItemHeroRow(hero: Character.example())
+        ItemHeroRow(hero: Character.fixture())
     }
 }

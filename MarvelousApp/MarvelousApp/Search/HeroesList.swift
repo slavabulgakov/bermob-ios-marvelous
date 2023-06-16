@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HeroesList: View {
-    @ObservedObject var viewModel: SearchViewModel
+    @ObservedObject var viewModel: ResultsViewModel
     
     var body: some View {
         List {
@@ -21,7 +21,7 @@ struct HeroesList: View {
 
 struct HeroesList_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = SearchViewModel()
+        let viewModel = ResultsViewModel()
         HeroesList(viewModel: viewModel)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SearchViewModel.swift
+//  ResultsViewModel.swift
 //  MarvelousApp
 //
 //  Created by Sergio Ruiz Pérez on 01.09.22.
@@ -12,7 +12,7 @@ import SwiftUI
 
 // MARK: - Private helper functions
 
-final class SearchViewModel: ObservableObject {
+final class ResultsViewModel: ObservableObject {
     
     @Published private(set) var characters = [Character]()
     
@@ -36,8 +36,8 @@ final class SearchViewModel: ObservableObject {
       // Create a new instance of the API with the authentication parameters.
       let marvelAPI = MarvelAPI(authenticationParameters: authenticationParameters)
 
-      // Make a request to get characters named "3D-Man" and print the results.
-      marvelAPI.getCharacters(term: term)
+      // Make a request to get characters whose name starts with the search term and print the results.
+      marvelAPI.getCharacters(nameStartsWith: term)
                   .sink(receiveCompletion: {_ in print("Request complete")},
                         receiveValue: {
                       

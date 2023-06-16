@@ -25,8 +25,8 @@ public struct Character: Decodable, CustomStringConvertible {
     return "ID: \(id) Name: \(name) Description: \(desc)"
   }
 
-  public static func example() -> Character {
-    return Character(id: 12341, name: "3D Man", desc: "Best hero ever")
+    public static func fixture(id: Int = 12341, name: String = "3D Man", desc: String = "Best hero ever") -> Character {
+    return Character(id: id, name: name, desc: desc)
   }
     
   /// The date the resource was most recently modified.

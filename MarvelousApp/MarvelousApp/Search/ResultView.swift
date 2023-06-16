@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ResultView: View {
     
-    @ObservedObject var viewModel = SearchViewModel()
+    @ObservedObject var viewModel = ResultsViewModel()
     
     private let term: String
     
