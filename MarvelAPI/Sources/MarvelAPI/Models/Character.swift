@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Character: Decodable {
+public struct Character: Decodable, CustomStringConvertible {
   
   /// The unique ID of the character resource.
   public let id: Int?
@@ -9,8 +9,26 @@ public struct Character: Decodable {
   public let name: String?
   
   ///  A short bio or description of the character.
-  public let description: String?
-  
+  public let desc: String?
+    
+  enum CodingKeys: String, CodingKey {
+      case id
+      case name
+      case desc = "description"
+  }
+    
+  public var description: String {
+    let id = self.id ?? 0
+    let name = self.name ?? ""
+    let desc = self.desc ?? ""
+      
+    return "ID: \(id) Name: \(name) Description: \(desc)"
+  }
+
+    public static func fixture(id: Int = 12341, name: String = "3D Man", desc: String = "Best hero ever") -> Character {
+    return Character(id: id, name: name, desc: desc)
+  }
+    
   /// The date the resource was most recently modified.
   // let modified: Date?
   // TODO: Decode Dates

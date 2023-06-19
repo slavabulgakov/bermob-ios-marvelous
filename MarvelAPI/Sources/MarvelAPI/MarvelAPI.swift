@@ -27,9 +27,9 @@ public class MarvelAPI {
   /// Return only characters matching the specified full character name (e.g. 3-D Man).
   ///
   /// - ToDo: Add additional parameters such as `nameStartsWith`, `orderBy`, and `limit`.
-  public func getCharacters(named: String) -> AnyPublisher<CharacterDataWrapper, Error> {
+  public func getCharacters(nameStartsWith: String) -> AnyPublisher<CharacterDataWrapper, Error> {
     
-    guard let url = Endpoint.getCharacters(named: "3-D Man",
+    guard let url = Endpoint.getCharacters(named: nameStartsWith,
                                            withAuthenticationParameters: authenticationParameters).url else {
       fatalError("Invalid URL")
     }

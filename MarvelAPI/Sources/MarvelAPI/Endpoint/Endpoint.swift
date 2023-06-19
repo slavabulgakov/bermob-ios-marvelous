@@ -22,7 +22,9 @@ extension Endpoint {
     return Endpoint(
       path: "/v1/public/characters",
       queryItems: [
-        URLQueryItem(name: "name", value: name),
+        URLQueryItem(name: "nameStartsWith", value: name),
+        URLQueryItem(name: "orderBy", value: "name"),
+        URLQueryItem(name: "limit", value: "20"),
         URLQueryItem(name: "ts", value: authenticationParameters.timeStamp),
         URLQueryItem(name: "apikey", value: authenticationParameters.publicKey),
         URLQueryItem(name: "hash", value: authenticationParameters.hash)
