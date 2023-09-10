@@ -9,30 +9,22 @@ import SwiftUI
 
 struct ResultView: View {
     
-    @ObservedObject var viewModel = ResultsViewModel()
-    
-    private let term: String
-    
-    init(term: String) {
-        self.term = term
-    }
+    @ObservedObject var viewModel: ResultsViewModel
     
     var body: some View {
-        VStack {
-            if viewModel.characters.isEmpty {
-                ProgressView("Loading...")
-            }            
+        ZStack {
             CharactersList(viewModel: viewModel)
+            if viewModel.isLoading {
+                ProgressView("Loading...")
+                    .padding(10)
+                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 5))
+            }
         }
-        .onAppear() {
-            viewModel.getCharacters(term: term)
-        }
-        .navigationTitle("Heroes")
     }
 }
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(term: "Super")
+        ResultView(viewModel: ResultsViewModel())
     }
 }

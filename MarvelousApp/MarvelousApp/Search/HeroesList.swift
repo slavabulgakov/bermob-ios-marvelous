@@ -15,7 +15,7 @@ struct CharactersList: View {
             ForEach(0..<viewModel.characters.count, id: \.self) { index in
                 ItemHeroRow(hero: viewModel.characters[index])
             }
-        }
+        }.listStyle(.plain)
     }
 }
 

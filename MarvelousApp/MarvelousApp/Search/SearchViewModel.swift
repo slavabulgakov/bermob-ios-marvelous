@@ -15,10 +15,12 @@ import SwiftUI
 final class ResultsViewModel: ObservableObject {
     
     @Published private(set) var characters = [Character]()
+    @Published private(set) var isLoading = false
     
     private var cancellable = Set<AnyCancellable>()
 
     func getCharacters(term: String) {
+        isLoading = true
 
       // Create credentials from JSON.
       guard let keyPairURLString = Bundle.main.path(forResource: "KeyPair", ofType: "json") else {
@@ -38,7 +40,10 @@ final class ResultsViewModel: ObservableObject {
 
       // Make a request to get characters whose name starts with the search term and print the results.
       marvelAPI.getCharacters(nameStartsWith: term)
-                  .sink(receiveCompletion: {_ in print("Request complete")},
+                  .sink(receiveCompletion: { [weak self] _ in
+                      print("Request complete")
+                      self?.isLoading = false
+                  },
                         receiveValue: {
                       
                       guard let dataWrapper = $0.data, let result = dataWrapper.results else {
